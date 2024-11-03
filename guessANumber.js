@@ -1,3 +1,4 @@
+// Importa módulo readline de Node
 const readline = require('readline');
 
 // Genera un número aleatorio entre 1 y 100
@@ -23,16 +24,16 @@ function jugar() {
 
     if (isNaN(adivinanza) || adivinanza < 1 || adivinanza > 100) {
       console.log("Por favor, ingresa un número válido entre 1 y 100.");
-      return jugar(); // Vuelve a llamar a la función si la entrada es inválida
+      return jugar();
     }
 
     intentos++;
 
     if (adivinanza < numeroAleatorio) {
-      console.log("Demasiado bajo.");
+      console.log("El número es más alto");
       jugar();
     } else if (adivinanza > numeroAleatorio) {
-      console.log("Demasiado alto.");
+      console.log("El número es más bajo");
       jugar();
     } else {
       console.log(`¡Felicidades! Adivinaste el número en ${intentos} intento(s).`);
@@ -41,6 +42,4 @@ function jugar() {
   });
 }
 
-// Inicia el juego
 jugar();
-
